@@ -505,6 +505,18 @@ textarea {
     box-shadow: 0 0 12px rgba(157, 78, 221, 0.5);
 }
 
+.chip-sql {
+    background: rgba(0, 245, 255, 0.1);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(0, 245, 255, 0.3);
+}
+
+.chip-sql:hover {
+    background: var(--accent-cyan);
+    color: #111;
+    box-shadow: 0 0 12px rgba(0, 245, 255, 0.5);
+}
+
 /* Avatar Image & Ring styling */
 .hero-image-wrapper {
     position: relative;
@@ -1029,6 +1041,202 @@ textarea {
         box-shadow: 0 0 15px rgba(0, 245, 255, 0.6);
         border-color: rgba(0, 245, 255, 1);
     }
+}
+
+/* --- Floating Social Sidebar --- */
+.social-sidebar {
+    position: fixed;
+    left: 24px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 400;
+}
+
+.social-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-speed) ease;
+    box-shadow: var(--card-shadow);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+    transition: transform var(--transition-speed);
+}
+
+.social-link:hover {
+    color: var(--accent-cyan);
+    border-color: var(--card-border-active);
+    box-shadow: 0 0 15px var(--accent-glow-cyan);
+    transform: translateY(-4px) scale(1.05);
+}
+
+.social-link:hover svg {
+    transform: scale(1.1);
+}
+
+/* --- Project Details Modal --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 7, 18, 0.7);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-card {
+    background: rgba(20, 16, 35, 0.9);
+    border: 2px solid var(--accent-purple);
+    border-radius: 16px;
+    padding: 30px;
+    width: 90%;
+    max-width: 680px;
+    box-shadow: 0 0 30px var(--accent-glow), 0 10px 40px rgba(0, 0, 0, 0.7);
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.light-theme .modal-card {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 30px rgba(123, 44, 191, 0.15);
+}
+
+.modal-overlay.active .modal-card {
+    transform: scale(1);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 2rem;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.modal-close-btn:hover {
+    color: var(--accent-pink);
+    transform: scale(1.1);
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 10px;
+}
+
+.modal-desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+}
+
+.modal-code-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.modal-code-title {
+    font-family: var(--font-mono);
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.modal-code-block {
+    background: #110e1a;
+    border: 1px solid rgba(157, 78, 221, 0.3);
+    border-radius: 8px;
+    padding: 16px;
+    overflow-x: auto;
+    max-height: 250px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.light-theme .modal-code-block {
+    background: #f4effa;
+    border-color: rgba(123, 44, 191, 0.2);
+}
+
+/* Java Code Highlighting Classes */
+.j-keyword {
+    color: #ff007f;
+    font-weight: bold;
+}
+
+.j-string {
+    color: #00f5ff;
+}
+
+.j-type {
+    color: #9d4edd;
+    font-weight: bold;
+}
+
+.j-comment {
+    color: #6b6380;
+    font-style: italic;
+}
+
+.j-number {
+    color: #ffbd2e;
+}
+
+.modal-btn-row {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-repo-btn {
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+    text-decoration: none;
+    box-shadow: 0 0 10px var(--accent-glow-cyan);
+}
+
+.modal-repo-btn:hover {
+    background: var(--accent-cyan);
+    color: #111;
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.5);
 }
 
 /* --- Media Queries (Responsiveness) --- */

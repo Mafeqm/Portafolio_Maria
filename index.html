@@ -1,26 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>María | Full-Stack Java Developer Portfolio</title>
     <!-- Meta tags for SEO -->
-    <meta name="description" content="Portafolio interactivo de María, Desarrolladora Full-Stack especialista en Java, con una estética cyberpunk-kawaii moderna y proyectos en 3D.">
-    
+    <meta name="description"
+        content="Portafolio interactivo de María, Desarrolladora Full-Stack especialista en Java, con una estética cyberpunk-kawaii moderna y proyectos en 3D.">
+
     <!-- Google Fonts for retro-cyber terminal and Outfit cute branding -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+
     <!-- Link styles.css -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="dark-theme">
     <!-- Interactive Background Canvas -->
     <canvas id="particle-canvas"></canvas>
 
     <!-- Custom Cursor -->
     <div id="custom-cursor"></div>
+
+    <!-- Floating Social Sidebar -->
+    <div class="social-sidebar">
+        <a href="https://github.com/Mafeqm" target="_blank" rel="noopener noreferrer" class="social-link github"
+            aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+            </svg>
+        </a>
+        <a href="mailto:mafeqm.1313@gmail.com" class="social-link email" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+        </a>
+    </div>
 
     <!-- Header & Navigation -->
     <header class="navbar-header">
@@ -79,6 +104,7 @@
                             <span class="chip chip-java">Java</span>
                             <span class="chip chip-js">Javascript</span>
                             <span class="chip chip-py">Python</span>
+                            <span class="chip chip-sql">SQL</span>
                             <span class="chip chip-html">HTML/CSS</span>
                         </div>
                     </div>
@@ -88,7 +114,8 @@
                     <div class="floating-ring ring-1"></div>
                     <div class="floating-ring ring-2"></div>
                     <div class="glitch-container">
-                        <img src="assets/female_programmer.png" alt="María - Full-Stack Developer Avatar" class="hero-avatar">
+                        <img src="assets/female_programmer.png" alt="María - Full-Stack Developer Avatar"
+                            class="hero-avatar">
                     </div>
                 </div>
             </div>
@@ -97,15 +124,19 @@
         <!-- Sobre Mí Section -->
         <section id="sobre-mi" class="section about-section">
             <div class="section-header-container">
-                <span class="header-prompt">> </span><h2 class="typewriter-header" data-text="Sobre Mí">Sobre Mí</h2>
+                <span class="header-prompt">> </span>
+                <h2 class="typewriter-header" data-text="Sobre Mí">Sobre Mí</h2>
             </div>
             <div class="about-grid">
                 <div class="about-card intro-card">
                     <h3>¿Quién soy?</h3>
-                    <p>Soy una apasionada desarrolladora Full-Stack con especial predilección por el ecosistema de <strong>Java</strong> y el desarrollo backend robusto. Me encanta fusionar infraestructuras backend limpias con interfaces interactivas y creativas en el frontend.</p>
-                    <p>Busco siempre desafiar los límites del diseño y la lógica en cada línea de código. Cuando no estoy programando, suelo explorar mecánicas de videojuegos o crear pixel art.</p>
+                    <p>Soy una apasionada desarrolladora Full-Stack con especial predilección por el ecosistema de
+                        <strong>Java</strong> y el desarrollo backend robusto. Me encanta fusionar infraestructuras
+                        backend limpias con interfaces interactivas y creativas en el frontend.</p>
+                    <p>Busco siempre desafiar los límites del diseño y la lógica en cada línea de código. Cuando no
+                        estoy programando, suelo explorar mecánicas de videojuegos o crear pixel art.</p>
                 </div>
-                
+
                 <div class="about-card stats-card">
                     <h3>RPG Stats.json</h3>
                     <div class="stat-bar-group">
@@ -113,28 +144,36 @@
                             <span>Backend (Java)</span>
                             <span class="stat-value">95%</span>
                         </div>
-                        <div class="progress-container"><div class="progress-bar" style="width: 95%"></div></div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 95%"></div>
+                        </div>
                     </div>
                     <div class="stat-bar-group">
                         <div class="stat-label">
                             <span>Frontend (JS/HTML/CSS)</span>
                             <span class="stat-value">85%</span>
                         </div>
-                        <div class="progress-container"><div class="progress-bar" style="width: 85%"></div></div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
                     </div>
                     <div class="stat-bar-group">
                         <div class="stat-label">
                             <span>Databases (SQL/NoSQL)</span>
                             <span class="stat-value">90%</span>
                         </div>
-                        <div class="progress-container"><div class="progress-bar" style="width: 90%"></div></div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
                     </div>
                     <div class="stat-bar-group">
                         <div class="stat-label">
                             <span>Python / Scripting</span>
                             <span class="stat-value">75%</span>
                         </div>
-                        <div class="progress-container"><div class="progress-bar" style="width: 75%"></div></div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -143,10 +182,11 @@
         <!-- Proyectos (3D Carousel) Section -->
         <section id="proyectos" class="section projects-section">
             <div class="section-header-container">
-                <span class="header-prompt">> </span><h2 class="typewriter-header" data-text="Mis Proyectos">Mis Proyectos</h2>
+                <span class="header-prompt">> </span>
+                <h2 class="typewriter-header" data-text="Mis Proyectos">Mis Proyectos</h2>
             </div>
             <p class="carousel-instruction">Usa las flechas o haz clic en las tarjetas para rotar el carrusel</p>
-            
+
             <div class="carousel-view-wrapper">
                 <div class="carousel-container3d">
                     <div class="carousel-slider3d" id="carousel-slider">
@@ -159,10 +199,14 @@
                                 </div>
                                 <div class="card-content">
                                     <h3 class="card-title">F1 Simulador de Carreras</h3>
-                                    <p class="card-desc">Simulador deportivo de Fórmula 1 completo. Presentación moderna de telemetría y rendimientos en tiempo real usando Swing y JavaFX con AtlantaFX.</p>
+                                    <p class="card-desc">Simulador deportivo de Fórmula 1 completo. Presentación moderna
+                                        de telemetría y rendimientos en tiempo real usando Swing y JavaFX con AtlantaFX.
+                                    </p>
                                     <div class="card-stats">
-                                        <div class="card-stat"><span class="stat-name">Complejidad:</span> <span class="stat-val cyber-text-cyan">★★★★★</span></div>
-                                        <div class="card-stat"><span class="stat-name">Rendimiento:</span> <span class="stat-val cyber-text-purple">★★★★☆</span></div>
+                                        <div class="card-stat"><span class="stat-name">Complejidad:</span> <span
+                                                class="stat-val cyber-text-cyan">★★★★★</span></div>
+                                        <div class="card-stat"><span class="stat-name">Rendimiento:</span> <span
+                                                class="stat-val cyber-text-purple">★★★★☆</span></div>
                                     </div>
                                     <div class="card-footer-buttons">
                                         <span class="card-btn-action">Ver Detalles</span>
@@ -180,10 +224,14 @@
                                 </div>
                                 <div class="card-content">
                                     <h3 class="card-title">Panel de Mercado en Tiempo Real</h3>
-                                    <p class="card-desc">Integración multihilo. Captura variaciones de mercado de valores con scripts Python distribuidos y monitoreo Java para análisis de volatilidad.</p>
+                                    <p class="card-desc">Integración multihilo. Captura variaciones de mercado de
+                                        valores con scripts Python distribuidos y monitoreo Java para análisis de
+                                        volatilidad.</p>
                                     <div class="card-stats">
-                                        <div class="card-stat"><span class="stat-name">Complejidad:</span> <span class="stat-val cyber-text-cyan">★★★★☆</span></div>
-                                        <div class="card-stat"><span class="stat-name">Concurrencia:</span> <span class="stat-val cyber-text-purple">★★★★★</span></div>
+                                        <div class="card-stat"><span class="stat-name">Complejidad:</span> <span
+                                                class="stat-val cyber-text-cyan">★★★★☆</span></div>
+                                        <div class="card-stat"><span class="stat-name">Concurrencia:</span> <span
+                                                class="stat-val cyber-text-purple">★★★★★</span></div>
                                     </div>
                                     <div class="card-footer-buttons">
                                         <span class="card-btn-action">Ver Detalles</span>
@@ -201,10 +249,14 @@
                                 </div>
                                 <div class="card-content">
                                     <h3 class="card-title">Registro de Gastos Personales</h3>
-                                    <p class="card-desc">Sistema contable personal. Arquitectura modular en Java para gestionar presupuestos, calcular reportes financieros y exportar estadísticas.</p>
+                                    <p class="card-desc">Sistema contable personal. Arquitectura modular en Java para
+                                        gestionar presupuestos, calcular reportes financieros y exportar estadísticas.
+                                    </p>
                                     <div class="card-stats">
-                                        <div class="card-stat"><span class="stat-name">Backend Core:</span> <span class="stat-val cyber-text-cyan">★★★★☆</span></div>
-                                        <div class="card-stat"><span class="stat-name">BD Estructura:</span> <span class="stat-val cyber-text-purple">★★★★☆</span></div>
+                                        <div class="card-stat"><span class="stat-name">Backend Core:</span> <span
+                                                class="stat-val cyber-text-cyan">★★★★☆</span></div>
+                                        <div class="card-stat"><span class="stat-name">BD Estructura:</span> <span
+                                                class="stat-val cyber-text-purple">★★★★☆</span></div>
                                     </div>
                                     <div class="card-footer-buttons">
                                         <span class="card-btn-action">Ver Detalles</span>
@@ -218,10 +270,16 @@
                 <!-- Carousel Controls -->
                 <div class="carousel-controls">
                     <button class="ctrl-btn prev-btn" id="prev-project-btn" aria-label="Imagen Anterior">
-                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                            fill="none">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
                     </button>
                     <button class="ctrl-btn next-btn" id="next-project-btn" aria-label="Siguiente Imagen">
-                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                            fill="none">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -230,9 +288,10 @@
         <!-- Contacto Section -->
         <section id="contacto" class="section contact-section">
             <div class="section-header-container">
-                <span class="header-prompt">> </span><h2 class="typewriter-header" data-text="Contacto">Contacto</h2>
+                <span class="header-prompt">> </span>
+                <h2 class="typewriter-header" data-text="Contacto">Contacto</h2>
             </div>
-            
+
             <div class="contact-terminal-wrapper">
                 <div class="terminal-header">
                     <div class="terminal-dot red"></div>
@@ -240,7 +299,8 @@
                     <div class="terminal-dot green"></div>
                     <span class="terminal-title">send_mail.sh</span>
                 </div>
-                <form class="contact-form" id="contact-form" onsubmit="event.preventDefault(); alert('¡Mensaje enviado con éxito! (Simulado)');">
+                <form class="contact-form" id="contact-form"
+                    onsubmit="event.preventDefault(); alert('¡Mensaje enviado con éxito! (Simulado)');">
                     <div class="form-row">
                         <label for="usr-name">Remitente: ~$ </label>
                         <input type="text" id="usr-name" placeholder="Tu nombre o empresa" required>
@@ -251,7 +311,8 @@
                     </div>
                     <div class="form-row">
                         <label for="usr-msg">Mensaje (Raw): ~$ </label>
-                        <textarea id="usr-msg" rows="4" placeholder="Escribe tu mensaje interactivo aquí..." required></textarea>
+                        <textarea id="usr-msg" rows="4" placeholder="Escribe tu mensaje interactivo aquí..."
+                            required></textarea>
                     </div>
                     <div class="form-button-container">
                         <button type="submit" class="cyber-btn send-btn">
@@ -274,7 +335,29 @@
         </div>
     </footer>
 
+    <!-- Project Details Modal -->
+    <div id="project-detail-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+            <h3 class="modal-title" id="modal-project-title">F1 Simulador de Carreras</h3>
+            <p class="modal-desc" id="modal-project-desc">Funcionalidad del simulador</p>
+
+            <div class="modal-code-section">
+                <span class="modal-code-title">Código Java (Snippet):</span>
+                <pre class="modal-code-block"><code id="modal-code-content"></code></pre>
+            </div>
+
+            <div class="modal-btn-row">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="cyber-btn modal-repo-btn"
+                    id="modal-repo-btn">
+                    <span class="btn-text">Ver Repositorio</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Link script.js -->
     <script src="script.js"></script>
 </body>
+
 </html>
