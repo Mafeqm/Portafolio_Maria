@@ -832,12 +832,20 @@ textarea {
 
 /* Card Controls */
 .carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
     display: flex;
-    gap: 1.5rem;
-    margin-top: 25px;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+    padding: 0 40px;
+    z-index: 100;
 }
 
 .ctrl-btn {
+    pointer-events: auto;
     background: rgba(19, 14, 30, 0.9);
     border: 2px solid var(--accent-purple);
     color: var(--text-primary);
@@ -1093,8 +1101,7 @@ textarea {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(10, 7, 18, 0.7);
-    backdrop-filter: blur(12px);
+    background: rgba(10, 7, 18, 0.96);
     display: flex;
     justify-content: center;
     align-items: center;

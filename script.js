@@ -360,6 +360,10 @@ Ejecutando inicialización modular de habilidades...`;
 
     // Drag listeners using PointerEvents (covers mouse delta + touch gestures cleanly)
     container3D.addEventListener('pointerdown', (e) => {
+        // Bypass drag capture if clicking details button or pagination controls
+        if (e.target.closest('.card-btn-action') || e.target.closest('.ctrl-btn')) {
+            return;
+        }
         if (window.innerWidth <= 768) return;
         isDragging = true;
         startX = e.clientX;
