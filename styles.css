@@ -583,6 +583,15 @@ textarea {
     transform: translateY(-5px);
 }
 
+.card-system-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-pink);
+    margin-bottom: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
 .intro-card h3,
 .stats-card h3 {
     font-size: 1.6rem;
@@ -638,22 +647,391 @@ textarea {
 .progress-bar {
     height: 100%;
     border-radius: 8px;
+    width: 0%;
     background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan));
-    box-shadow: 0 0 8px var(--accent-cyan);
-    transition: width 1.5s ease-in-out;
+    box-shadow: 0 0 10px var(--accent-cyan);
+    transition: width 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Misión y Visión (Terminales con Neón Cian y Glassmorphism) --- */
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    margin-top: 3.5rem;
+}
+
+.terminal-card {
+    background: rgba(12, 9, 24, 0.78);
+    border: 1.5px solid rgba(0, 245, 255, 0.45);
+    border-radius: 14px;
+    box-shadow: 0 8px 32px 0 rgba(7, 3, 15, 0.6), 0 0 20px rgba(0, 245, 255, 0.2);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all var(--transition-speed);
+}
+
+.light-theme .terminal-card {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: rgba(2, 128, 144, 0.4);
+    box-shadow: 0 8px 24px rgba(2, 128, 144, 0.12);
+}
+
+.terminal-card:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7), 0 0 28px rgba(0, 245, 255, 0.45);
+    transform: translateY(-5px);
+}
+
+.cyan-terminal-header {
+    background: rgba(16, 21, 38, 0.95);
+    border-bottom: 1.5px solid rgba(0, 245, 255, 0.35);
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+}
+
+.light-theme .cyan-terminal-header {
+    background: #e2f1f5;
+    border-color: rgba(2, 128, 144, 0.3);
+}
+
+.cyan-badge {
+    font-size: 0.75rem;
+    background: rgba(0, 245, 255, 0.12);
+    color: var(--accent-cyan);
+    border: 1px solid var(--accent-cyan);
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-shadow: 0 0 6px var(--accent-cyan);
+    box-shadow: 0 0 8px rgba(0, 245, 255, 0.25);
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+
+.glass-terminal-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.terminal-prompt-line {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.prompt-sym {
+    color: var(--accent-pink);
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.cmd-cyan {
+    color: var(--accent-cyan);
+    font-weight: 600;
+}
+
+.terminal-heading-cyan {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    text-shadow: 0 0 10px var(--accent-glow-cyan);
+    margin: 2px 0;
+}
+
+.terminal-text {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-primary);
+}
+
+.terminal-text strong {
+    color: var(--accent-cyan);
+}
+
+.terminal-footer-tags {
+    margin-top: auto;
+    padding-top: 14px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border-top: 1px dashed rgba(0, 245, 255, 0.2);
+}
+
+.tag-bracket {
+    color: var(--accent-pink);
+    font-weight: bold;
+}
+
+.tag-sep {
+    color: var(--accent-purple);
+    margin: 0 6px;
+}
+
+/* --- RPG Soft Skills Stats Subsection --- */
+.soft-skills-rpg-container {
+    margin-top: 3.5rem;
+    background: rgba(13, 9, 26, 0.85);
+    border: 2px solid var(--accent-purple);
+    border-radius: 18px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(157, 78, 221, 0.25);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: all var(--transition-speed);
+}
+
+.light-theme .soft-skills-rpg-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: var(--accent-purple);
+    box-shadow: 0 10px 30px rgba(123, 44, 191, 0.12);
+}
+
+.rpg-hud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(157, 78, 221, 0.35);
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.rpg-title-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.rpg-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 8px var(--accent-purple));
+}
+
+.rpg-title-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.rpg-main-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+}
+
+.rpg-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent-cyan);
+}
+
+.rpg-rank-badge {
+    background: rgba(157, 78, 221, 0.15);
+    border: 1.5px solid var(--accent-purple);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    box-shadow: 0 0 12px rgba(157, 78, 221, 0.25);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.rank-label {
+    color: var(--text-secondary);
+}
+
+.rank-tier {
+    color: var(--accent-pink);
+    font-weight: bold;
+    text-shadow: 0 0 6px rgba(255, 0, 127, 0.4);
+}
+
+.rpg-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.rpg-stat-card {
+    background: rgba(22, 16, 42, 0.65);
+    border: 1px solid rgba(157, 78, 221, 0.3);
+    border-radius: 12px;
+    padding: 1.4rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.light-theme .rpg-stat-card {
+    background: rgba(246, 240, 252, 0.8);
+    border-color: rgba(123, 44, 191, 0.2);
+}
+
+.rpg-stat-card:hover {
+    border-color: var(--accent-purple);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(157, 78, 221, 0.25);
+}
+
+.rpg-stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.rpg-stat-name-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-code-badge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--accent-cyan);
+    background: rgba(0, 245, 255, 0.12);
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.rpg-stat-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.rpg-stat-score-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+
+.rpg-stat-grade {
+    color: var(--accent-cyan);
+    font-size: 0.85rem;
+    background: rgba(0, 245, 255, 0.1);
+    padding: 1px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+.rpg-stat-percent {
+    color: var(--accent-pink);
+    font-size: 1.05rem;
+    min-width: 45px;
+    text-align: right;
+}
+
+.rpg-progress-track {
+    background: rgba(8, 5, 16, 0.8);
+    height: 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(157, 78, 221, 0.3);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.light-theme .rpg-progress-track {
+    background: #e4dcf0;
+}
+
+.rpg-progress-fill.purple-neon-glow {
+    height: 100%;
+    border-radius: 8px;
+    width: 0%;
+    transition: width 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+    background: linear-gradient(90deg, #7b2cbf 0%, #9d4edd 50%, #c77dff 100%);
+    box-shadow: 0 0 14px rgba(157, 78, 221, 0.9), 0 0 25px rgba(199, 125, 255, 0.6);
+    position: relative;
+}
+
+.progress-flare {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: #ffffff;
+    border-radius: 50%;
+    filter: blur(1.5px);
+    box-shadow: 0 0 8px #ffffff, 0 0 14px #c77dff;
+}
+
+.rpg-stat-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
 }
 
 /* --- Proyectos 3D Carousel --- */
 .projects-section {
     overflow: visible;
+    position: relative;
+}
+
+/* --- Carousel Instruction Banner (Elevated & Protected) --- */
+.carousel-instruction-wrapper {
+    position: relative;
+    z-index: 150;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.carousel-instruction-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(18, 13, 30, 0.92);
+    border: 1.5px solid var(--accent-cyan);
+    box-shadow: 0 0 20px var(--accent-glow-cyan), 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding: 10px 28px;
+    border-radius: 30px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+.light-theme .carousel-instruction-badge {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 4px 15px rgba(2, 128, 144, 0.15);
+}
+
+.carousel-instruction-badge:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(0, 245, 255, 0.45);
+}
+
+.instruction-sparkle {
+    color: var(--accent-pink);
+    font-size: 1rem;
+    animation: pulseGlow 1.5s infinite alternate;
 }
 
 .carousel-instruction {
     text-align: center;
     font-family: var(--font-mono);
-    color: var(--text-secondary);
-    margin-bottom: 3.5rem;
+    color: var(--text-primary);
     font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
 }
 
 .carousel-view-wrapper {
@@ -662,11 +1040,12 @@ textarea {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 0.5rem;
 }
 
 .carousel-container3d {
     width: 100%;
-    height: 480px;
+    height: 520px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1261,6 +1640,16 @@ textarea {
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
+
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .rpg-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1285,11 +1674,39 @@ textarea {
 
     .nav-menu {
         display: none;
-        /* Can toggle in JS or build compact mobile indicator if needed */
     }
 
     .section {
         padding: 80px 5%;
+    }
+
+    .about-card,
+    .soft-skills-rpg-container,
+    .terminal-card {
+        padding: 1.5rem;
+    }
+
+    .rpg-hud-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .rpg-rank-badge {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .carousel-instruction-wrapper {
+        margin-bottom: 2rem;
+    }
+
+    .carousel-instruction-badge {
+        padding: 8px 16px;
+    }
+
+    .carousel-instruction {
+        font-size: 0.85rem;
     }
 
     .carousel-container3d {
@@ -1297,7 +1714,7 @@ textarea {
         perspective: none;
     }
 
-    /* Stack cards vertically or do a simple horizontal swipe */
+    /* Stack cards vertically on mobile */
     .carousel-slider3d {
         display: flex;
         flex-direction: column;
@@ -1325,10 +1742,6 @@ textarea {
     }
 
     .carousel-controls {
-        display: none;
-    }
-
-    .carousel-instruction {
         display: none;
     }
 

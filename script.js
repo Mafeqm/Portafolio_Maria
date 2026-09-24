@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animateCursor();
 
     // Hover effect on interactive elements
-    const hoverTargets = document.querySelectorAll('a, button, input, textarea, .project-card, .ctrl-btn');
+    const hoverTargets = document.querySelectorAll('a, button, input, textarea, .project-card, .ctrl-btn, .terminal-card, .rpg-stat-card, .carousel-instruction-badge, .about-card');
     hoverTargets.forEach(target => {
         target.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
         target.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
@@ -299,6 +299,59 @@ Ejecutando inicialización modular de habilidades...`;
 
 
     /* ==========================================================================
+       5.1. Scroll-Triggered RPG Stats & Soft Skills Progress Animation
+       ========================================================================== */
+    const statsContainers = document.querySelectorAll('.stats-card, .soft-skills-rpg-container');
+
+    const statsObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Animate Technical Stats Bars
+                const techBars = entry.target.querySelectorAll('.progress-bar');
+                techBars.forEach(bar => {
+                    const targetWidth = bar.getAttribute('data-progress') || '0%';
+                    bar.style.width = targetWidth;
+                });
+
+                // Animate RPG Soft Skills Neon Purple Progress Bars
+                const rpgFills = entry.target.querySelectorAll('.rpg-progress-fill');
+                rpgFills.forEach(fill => {
+                    const targetWidth = fill.getAttribute('data-progress') || '0%';
+                    fill.style.width = targetWidth;
+                });
+
+                // Animate RPG Number Percentage Counters
+                const percentCounters = entry.target.querySelectorAll('.rpg-stat-percent');
+                percentCounters.forEach(counter => {
+                    const targetVal = parseInt(counter.getAttribute('data-val'), 10) || 0;
+                    let currentVal = 0;
+                    const duration = 1400; // ms
+                    const stepTime = Math.max(12, Math.floor(duration / targetVal));
+
+                    const interval = setInterval(() => {
+                        currentVal += 1;
+                        counter.textContent = `${currentVal}%`;
+                        if (currentVal >= targetVal) {
+                            counter.textContent = `${targetVal}%`;
+                            clearInterval(interval);
+                        }
+                    }, stepTime);
+                });
+
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    statsContainers.forEach(container => {
+        statsObserver.observe(container);
+    });
+
+
+    /* ==========================================================================
        6. 3D Rotating Project Carousel (With Advanced Mouse / Touch Drag)
        ========================================================================== */
     const slider = document.getElementById('carousel-slider');
@@ -471,7 +524,7 @@ Ejecutando inicialización modular de habilidades...`;
         {
             title: "F1 Simulador de Carreras",
             desc: "Este fragmento de código representa el motor de simulación física del coche en el backend de Java. Calcula el estado dinámico del monoplaza (velocidad, desgaste de ruedas, consumo de combustible) utilizando hilos concurrentes para representar el paso del tiempo por vuelta, variando según los parámetros climáticos del circuito y el modo de motor seleccionado.",
-            repo: "https://github.com/Mafeqm/Portafolio_Maria",
+            repo: "https://github.com/Samuelgelvez20/f1-simulator.git",
             code: `<span class="j-comment">// Telemetry simulation update loop</span>
 <span class="j-keyword">public</span> <span class="j-keyword">class</span> <span class="j-type">TelemetriaSimulador</span> {
     <span class="j-keyword">private</span> <span class="j-keyword">double</span> velocidad;
@@ -493,7 +546,7 @@ Ejecutando inicialización modular de habilidades...`;
         {
             title: "Panel de Mercado de Valores en Tiempo Real",
             desc: "Middleware backend de procesamiento de eventos en tiempo real. Utiliza la interfaz Runnable y Pools de Hilos de Java para actualizar dinámicamente los precios de múltiples acciones de la bolsa simultáneamente, notificando mediante el patrón de diseño Observer a la interfaz frontend sin bloquear el hilo principal de renderizado.",
-            repo: "https://github.com/Mafeqm/Portafolio_Maria",
+            repo: "https://github.com/Mafeqm/Panel-de-control-del-mercado-de-valores-en-tiempo-real.git",
             code: `<span class="j-comment">// Volatility analyzer and multi-threaded feed loop</span>
 <span class="j-keyword">public</span> <span class="j-keyword">class</span> <span class="j-type">ManejadorAcciones</span> <span class="j-keyword">implements</span> <span class="j-type">Runnable</span> {
     <span class="j-keyword">private</span> <span class="j-keyword">final</span> <span class="j-type">String</span> ticker;
@@ -518,7 +571,7 @@ Ejecutando inicialización modular de habilidades...`;
         {
             title: "Registro de Gastos Personales",
             desc: "Núcleo de validación del módulo contable de la aplicación de finanzas. Implementa una lógica modular orientada a objetos en Java que controla límites de presupuestos mensuales, registrando transacciones monetarias y disparando excepciones personalizadas estructuradas si el balance total resulta insuficiente.",
-            repo: "https://github.com/Mafeqm/Portafolio_Maria",
+            repo: "https://github.com/Mafeqm/Registro-de-gastos-personales.git",
             code: `<span class="j-comment">// Transaction ledger and custom safety checks</span>
 <span class="j-keyword">public</span> <span class="j-keyword">class</span> <span class="j-type">RegistroContable</span> {
     <span class="j-keyword">private</span> <span class="j-keyword">final</span> <span class="j-type">List</span>&lt;<span class="j-type">Double</span>&gt; transacciones = <span class="j-keyword">new</span> <span class="j-type">ArrayList</span>&lt;&gt;();
