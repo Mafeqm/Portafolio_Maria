@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animateCursor();
 
     // Hover effect on interactive elements
-    const hoverTargets = document.querySelectorAll('a, button, input, textarea, .project-card, .ctrl-btn, .terminal-card, .rpg-stat-card, .carousel-instruction-badge, .about-card');
+    const hoverTargets = document.querySelectorAll('a, button, input, textarea, .project-card, .ctrl-btn, .terminal-card, .rpg-stat-card, .carousel-instruction-badge, .about-card, .server-status-container, .profile-card-featured');
     hoverTargets.forEach(target => {
         target.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
         target.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
